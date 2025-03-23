@@ -25,15 +25,28 @@ void input()
     cout << "Masukkan Element Array" << endl;
     cout << "======================" << endl;
 
-    for(int 1 = 0; i < n; i++) //Menggunakan perulangan for untuk menyimpan data pada array
+    for(int i = 0; i < n; i++) //Menggunakan perulangan for untuk menyimpan data pada array
     {
         cout << "Data Ke-" << (i+1) << ": "; //Memasukkan atau menginput nilai data n
         cin >> arr[i]; //Menyimpan nilai data n ke dalam array arr
     }
 }
+
 void insertionSort ()
 {//Procedur InsertSort
     int temp; //Membuat variabel data temporer atau penyimpanan sementara
     int j, i; //Membuat variabel j sebagai penanda
     
+    for (i = 1; i <= n; i++)
+    {//step 1
+        temp = arr[i]; //step 2
+        j = i - 1; //step 3
+        
+        while(j >=0 && arr[j] > temp) //Step 4
+        {
+            arr[j + 1] = arr[j]; //step 4a
+            j--; //step 4b
+        }
+    arr[j + 1] = temp; //step 5
+    }
 }
